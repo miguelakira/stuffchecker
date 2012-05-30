@@ -1,0 +1,33 @@
+<%= form_for(@checker) do |f| %>
+  <% if @checker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@checker.errors.count, "error") %> prohibited this checker from being saved:</h2>
+
+      <ul>
+      <% @checker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :data_envio %><br />
+    <%= f.date_select :data_envio, :order => [:day, :month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :status_id %><br />
+    <%= f.select :status_id, Status.all.collect {|p| [ p.valor, p.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :codigo_rastreio %><br />
+    <%= f.text_field :codigo_rastreio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

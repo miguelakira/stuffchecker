@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  data_envio: 2012-05-30 09:56:48
+  data_chegada: 2012-05-30 09:56:48
+  codigo_rastreio: MyString
+
+two:
+  nome: MyString
+  data_envio: 2012-05-30 09:56:48
+  data_chegada: 2012-05-30 09:56:48
+  codigo_rastreio: MyString

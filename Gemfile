@@ -7,7 +7,7 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 gem 'heroku'
-
+gem 'thin'
 group :production do
   gem 'pg'
 end

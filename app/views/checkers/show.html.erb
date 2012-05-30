@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @checker.nome %>
+</p>
+
+<p>
+  <b>Data envio:</b>
+  <%= @checker.data_envio %>
+</p>
+
+<p>
+  <b>Data chegada:</b>
+  <%= @checker.data_chegada %>
+</p>
+
+<p>
+  <b>Codigo rastreio:</b>
+  <%= @checker.codigo_rastreio %>
+</p>
+
+
+<%= link_to 'Edit', edit_checker_path(@checker) %> |
+<%= link_to 'Back', checkers_path %>
