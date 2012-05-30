@@ -4,7 +4,6 @@
   <tr>
     <th class = 'begin'>Data envio</th>    <th>Nome</th>
     <th>Status</th>
-    <th>Data chegada</th>
     <th>Codigo rastreio</th>
     <th></th>
     <th></th>
@@ -17,7 +16,6 @@
       <td class = 'begin'><%= checker.data_envio.strftime("%d/%m/%y") %></td>
       <td><%= checker.nome %></td>
       <td><%= checker.status.valor %></td>
-      <td><%= checker.data_chegada.strftime("%d/%m/%y") unless checker.data_chegada.nil?%></td>
       <td><%= link_to checker.codigo_rastreio, "http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_LINGUA=001&P_TIPO=001&P_COD_UNI=" + checker.codigo_rastreio %></td>      <td><%= link_to 'Show', checker %></td>
       <td><%= link_to 'Edit', edit_checker_path(checker) %></td>
       <td><%= link_to 'Destroy', checker, confirm: 'Are you sure?', method: :delete %></td>

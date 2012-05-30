@@ -3,7 +3,7 @@ class CheckersController < ApplicationController
   # GET /checkers.json
   def index
     @checkers = Checker.find(:all, :order => :data_envio)
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @checkers }
