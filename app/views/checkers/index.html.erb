@@ -1,9 +1,8 @@
 <h1>Produtos a Receber</h1>
 
-<table>
+<table id = 'mytable'>
   <tr>
-    <th>Data envio</th>
-    <th>Nome</th>
+    <th class = 'begin'>Data envio</th>    <th>Nome</th>
     <th>Status</th>
     <th>Data chegada</th>
     <th>Codigo rastreio</th>
@@ -15,7 +14,7 @@
 <% @checkers.each do |checker| %>
   <% if checker.status.valor != "Entregue" %>
     <tr>
-      <td><%= checker.data_envio.strftime("%d/%m/%y") %></td>
+      <td class = 'begin'><%= checker.data_envio.strftime("%d/%m/%y") %></td>
       <td><%= checker.nome %></td>
       <td><%= checker.status.valor %></td>
       <td><%= checker.data_chegada.strftime("%d/%m/%y") unless checker.data_chegada.nil?%></td>
@@ -32,9 +31,9 @@
 
 <h1>Produtos Recebidos</h1>
 
-<table>
+<table id = 'mytable'>
   <tr>
-    <th>Data envio</th>
+    <th class = 'begin'>Data envio</th>
     <th>Nome</th>
     <th>Status</th>
     <th>Data chegada</th>
@@ -47,7 +46,7 @@
 <% @checkers.each do |checker| %>
   <% if checker.status.valor == "Entregue" %>
     <tr>
-      <td><%= checker.data_envio.strftime("%d/%m/%y") %></td>
+      <td class = 'begin'><%= checker.data_envio.strftime("%d/%m/%y") %></td>
       <td><%= checker.nome %></td>
       <td><%= checker.status.valor %></td>
       <td><%= checker.data_chegada.strftime("%d/%m/%y") unless checker.data_chegada.nil?%></td>
