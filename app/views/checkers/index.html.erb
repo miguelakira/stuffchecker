@@ -1,4 +1,4 @@
-<h1>Listing checkers</h1>
+<h1>Produtos a Receber</h1>
 
 <table>
   <tr>
@@ -13,19 +13,53 @@
   </tr>
 
 <% @checkers.each do |checker| %>
-  <tr>
-    <td><%= checker.data_envio.strftime("%d/%m/%y") %></td>
-    <td><%= checker.nome %></td>
-    <td><%= checker.status.valor %></td>
-    <td><%= checker.data_chegada.strftime("%d/%m/%y") unless checker.data_chegada.nil?%></td>
-    <td><%= checker.codigo_rastreio %></td>
-    <td><%= link_to 'Show', checker %></td>
-    <td><%= link_to 'Edit', edit_checker_path(checker) %></td>
-    <td><%= link_to 'Destroy', checker, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <% if checker.status.valor != "Entregue" %>
+    <tr>
+      <td><%= checker.data_envio.strftime("%d/%m/%y") %></td>
+      <td><%= checker.nome %></td>
+      <td><%= checker.status.valor %></td>
+      <td><%= checker.data_chegada.strftime("%d/%m/%y") unless checker.data_chegada.nil?%></td>
+      <td><%= checker.codigo_rastreio %></td>
+      <td><%= link_to 'Show', checker %></td>
+      <td><%= link_to 'Edit', edit_checker_path(checker) %></td>
+      <td><%= link_to 'Destroy', checker, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end -%>
 <% end %>
 </table>
 
 <br />
 
+
+<h1>Produtos Recebidos</h1>
+
+<table>
+  <tr>
+    <th>Data envio</th>
+    <th>Nome</th>
+    <th>Status</th>
+    <th>Data chegada</th>
+    <th>Codigo rastreio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @checkers.each do |checker| %>
+  <% if checker.status.valor == "Entregue" %>
+    <tr>
+      <td><%= checker.data_envio.strftime("%d/%m/%y") %></td>
+      <td><%= checker.nome %></td>
+      <td><%= checker.status.valor %></td>
+      <td><%= checker.data_chegada.strftime("%d/%m/%y") unless checker.data_chegada.nil?%></td>
+      <td><%= checker.codigo_rastreio %></td>
+      <td><%= link_to 'Show', checker %></td>
+      <td><%= link_to 'Edit', edit_checker_path(checker) %></td>
+      <td><%= link_to 'Destroy', checker, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end -%>
+<% end %>
+</table>
+
+<br />
 <%= link_to 'New Checker', new_checker_path %>
