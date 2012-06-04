@@ -58,11 +58,7 @@ class CheckersController < ApplicationController
   # PUT /checkers/1.json
   def update
     @checker = Checker.find(params[:id])
-    if @checker.status.valor != "Entregue"
-      @checker.data_chegada = nil
-    else
-      @checker.data_chegada = Time.now
-    end
+    
 
 
     respond_to do |format|
