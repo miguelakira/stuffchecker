@@ -8,7 +8,7 @@ class Checker < ActiveRecord::Base
     if self.status.valor != "Entregue"
       self.data_chegada = nil
     else
-      self.data_chegada = Time.now
+      self.data_chegada = Time.now unless !self.data_chegada.nil?
     end
   end
   
