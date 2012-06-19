@@ -1,5 +1,5 @@
 class Checker < ActiveRecord::Base
-  attr_accessible :codigo_rastreio, :data_chegada, :data_envio, :nome, :status_id, :status
+  attr_accessible :codigo_rastreio, :data_chegada, :data_envio, :nome, :status_id, :status, :preco
   belongs_to :status
 
   before_save :save_data_chegada
