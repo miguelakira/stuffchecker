@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530131652) do
+ActiveRecord::Schema.define(:version => 20120619223949) do
 
   create_table "checkers", :force => true do |t|
     t.string   "nome"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120530131652) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "status_id"
+    t.float    "preco"
   end
 
   create_table "statuses", :force => true do |t|
